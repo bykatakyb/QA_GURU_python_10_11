@@ -1,7 +1,7 @@
 import pytest
 
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.chrome.options import Options
 from selene import Browser, Config
 
 from utils import attach
@@ -10,7 +10,7 @@ from utils import attach
 def setup_browser(request):
     options = Options()
     selenoid_capabilities = {
-        "browserName": "firefox",
+        "browserName": "chrome",
         "browserVersion": "122.0",
         "selenoid:options": {
             "enableVNC": True,
