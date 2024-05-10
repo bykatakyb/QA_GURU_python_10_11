@@ -10,7 +10,7 @@ from utils import attach
 def setup_browser(request):
     options = Options()
     selenoid_capabilities = {
-        "browserName": "chrome",
+        "browserName": "firefox",
         "browserVersion": "122.0",
         "selenoid:options": {
             "enableVNC": True,
@@ -27,7 +27,7 @@ def setup_browser(request):
     yield browser
 
     attach.add_screenshot(browser)
-    attach.add_logs(browser)
+    # attach.add_logs(browser)
     attach.add_html(browser)
     attach.add_video(browser)
 
