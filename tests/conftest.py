@@ -1,10 +1,10 @@
 import pytest
-
+from selene import Browser, Config
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selene import Browser, Config
 
 from utils import attach
+
 
 @pytest.fixture(scope='function')
 def setup_browser(request):
