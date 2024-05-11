@@ -1,8 +1,8 @@
-import os
-
 import allure
 from allure_commons.types import Severity
 from selene import browser, have, be, command
+
+import resource
 
 
 @allure.tag('QA_GURU_python_10_11')
@@ -43,7 +43,7 @@ def test_filling_form():
         browser.element("label[for='hobbies-checkbox-2']").click()
     # picture
     with allure.step('Upload picture'):
-        browser.element('#uploadPicture').send_keys(os.path.abspath('image/image.jpg'))
+        browser.element('#uploadPicture').send_keys(resource.path('image.jpg'))
     # current address
     with allure.step('Fill current address'):
         browser.element('#currentAddress').type('Javakhishvili St, 47, ap 39')
